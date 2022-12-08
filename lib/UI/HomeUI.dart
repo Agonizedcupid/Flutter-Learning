@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:starter_project/UI/Drawable/ButtonClass.dart';
 
 ///  Similarity With Native:
 ///    1. BodyOfHome Act like a Fragment In Activity.
@@ -31,7 +32,6 @@ class StateOfHomePage extends State<BodyOfHome> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -85,33 +85,9 @@ class StateOfHomePage extends State<BodyOfHome> {
   Widget buttonSection = Row(
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: [
-      ButtonClass.buildButtonModel(Colors.blue, Icons.call, "Call"),
-      ButtonClass.buildButtonModel(Colors.blue, Icons.route, "Route"),
-      ButtonClass.buildButtonModel(Colors.blue, Icons.share, "Share"),
+      ImageTextBtn.buildButtonModel(Colors.blue, Icons.call, "Call"),
+      ImageTextBtn.buildButtonModel(Colors.blue, Icons.route, "Route"),
+      ImageTextBtn.buildButtonModel(Colors.blue, Icons.share, "Share"),
     ],
   );
-}
-
-class ButtonClass {
-  //Building Button Model:
-  static Column buildButtonModel(Color color, IconData icon, String label) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Icon(
-          icon,
-          color: color,
-        ),
-        Container(
-          margin: const EdgeInsets.only(top: 10),
-          child: Text(
-            label,
-            style: TextStyle(
-                fontSize: 16, fontWeight: FontWeight.bold, color: color),
-          ),
-        )
-      ],
-    );
-  }
 }
